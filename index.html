@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Land of Grandeur</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="logo.png" />
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Header -->
+    <header>
+      <div class="logo-title">
+        <img src="logo.png" alt="Logo" class="logo" />
+        <h1>THE LAND OF GRANDEUR</h1>
+      </div>
+      <nav class="nav-buttons">
+        <a href="index.html">HOME</a>
+        <a href="exhibition.html">EXHIBITION</a>
+        <a href="socials.html">SOCIALS</a>
+        <a href="about.html">ABOUT US</a>
+      </nav>
+    </header>
+
+    <!-- Main Section -->
+    <main class="content-area">
+      <section id="grandeur-welcome" class="grand-welcome-section">
+        <div class="grand-center-box">
+          <h1 class="grand-title">WELCOME TO THE LAND OF GRANDEUR</h1>
+          <p class="grand-subtitle">a grandland of writers, singers, artists, and editors</p> <br><br>
+
+          <!-- Slideshow Text -->
+          <div class="slideshow-container">
+            <div class="slide fade">
+              <div class="slide-text">Founded by Vantheora Grandeur</div>
+            </div>
+            <div class="slide fade">
+              <div class="slide-text">Established on May 25, 2025</div>
+            </div>
+            <div class="slide fade">
+              <div class="slide-text">grandiose guild grew gracefully; gloriously gleaming golden glitters</div>
+            </div>
+            <div class="dots">
+              <span class="dot" onclick="showSlide(1)"></span>
+              <span class="dot" onclick="showSlide(2)"></span>
+              <span class="dot" onclick="showSlide(3)"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+        <footer>
+      <div class="footer-content">
+        <div class="footer-brand">ᜋᜑᜇ᜔ᜎᜒᜃ</div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Slideshow JS -->
+ <script>
+  // === SLIDESHOW FUNCTIONALITY ===
+  let slideIndex = 0;
+  const slides = document.querySelectorAll(".slide");
+  const dots = document.querySelectorAll(".dot");
+
+  function showSlides() {
+    slides.forEach((slide, i) => {
+      slide.style.display = i === slideIndex ? "block" : "none";
+      dots[i].classList.toggle("active", i === slideIndex);
+    });
+    slideIndex = (slideIndex + 1) % slides.length;
+  }
+
+  function showSlide(n) {
+    slideIndex = (n - 1 + slides.length) % slides.length;
+    showSlides();
+  }
+
+  showSlides();
+  setInterval(showSlides, 3000);
+</script>

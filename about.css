@@ -1,0 +1,391 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Roman';
+  src: url(RomanAntique.ttf);
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roman';
+  background-color: #508e8c;
+  color: #a8f0e0;
+}
+
+/* Layout wrapper */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Header */
+header {
+  background-color: #1c2d37;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  flex-wrap: wrap;
+  gap: 10px;
+  letter-spacing: 3px;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+  margin-right: 10px;
+  display: block;
+}
+
+header h1 {
+  font-size: clamp(18px, 4vw, 28px);
+  color: #76d1c4;
+  font-weight: bold;
+  line-height: 1.2;
+  white-space: nowrap;
+}.nav-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nav-buttons a {
+  padding: 8px 12px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #76d1c4;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-buttons a:hover {
+  background-color: #3a616d;
+  color: #a8f0e0;
+}
+
+/* Main layout */
+.main-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 200px;
+  background-color: #273f52;
+  padding: 70px 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.sidebar-menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-menu li a {
+  display: block;
+  background-color: #2c4954;
+  color: #76d1c4;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-family: 'Roman';
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sidebar-menu li a:hover,
+.sidebar-menu li a.active {
+  background-color: #3a616d;
+  color: #a8f0e0;
+  transform: scale(1.05) translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Content area */
+.content-area {
+  flex-grow: 1;
+  background-color: #508e8c;
+  overflow-y: auto; /* allow vertical scrolling */
+  height: 100%;
+  position: relative;
+  padding: 40px 20px;
+}
+
+/* Section toggle logic */
+.content-section {
+  display: none;
+  padding: 40px;
+  overflow-y: auto;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.content-section.active {
+  display: block;
+}
+
+
+/* Footer */
+footer {
+  height: 80px;
+  background-color: #1c2d37;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
+  color: #76d1c4;
+  font-family: 'Roman';
+}
+
+.footer-content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #76d1c4;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #a8f0e0;
+}
+
+/* Mobile & Small Tablet */
+@media (max-width: 767px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 20px;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .logo-title {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    height: 50px;
+  }
+
+  header h1 {
+    font-size: clamp(16px, 6vw, 24px);
+    text-align: center;
+    white-space: normal;
+  }
+
+  .nav-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .nav-buttons a {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .main-container {
+    flex-direction: column;
+    height: auto;
+    overflow-y: auto;
+  }
+}
+
+/* Medium devices (Tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  header h1 {
+    font-size: 24px;
+  }
+
+  .nav-buttons a {
+    padding: 10px 16px;
+    font-size: 15px;
+  }
+
+  .sidebar {
+    width: 160px;
+  }
+
+  .tool-card {
+    flex: 1 1 45%;
+  }
+}
+
+footer {
+  background-color: #1c2d37;
+  padding: 20px 10px;
+  color: #76d1c4;
+  text-align: center;
+  font-family: 'Roman', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.footer-brand {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+/* Responsive scaling for smaller screens */
+@media (max-width: 767px) {
+  .footer-brand {
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+}
+
+/* Section Wrapper */
+.member-section {
+  margin-bottom: 60px;
+}
+
+/* Section Titles */
+.group-title {
+  text-align: center;
+  color: #fff;
+  font-size: 26px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  animation: fadeUp 1s ease-out both;
+}
+
+/* Members Grid - Already styled but include for clarity */
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+  justify-items: center;
+}
+
+/* Cards already styled with .member-card */
+
+
+/* Member Card */
+.member-card {
+  width: 100%;
+  max-width: 192px; /* Ensures 2x2 look */
+  background-color: #ffffff10;
+   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  text-align: center;
+  color: #a8f0e0;
+  transition: transform 0.3s ease;
+}
+
+.member-card:hover {
+  transform: scale(1.05);
+}
+
+.member-card img {
+  width: 100%;
+  height: 192px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+.member-card h4 {
+  background-color: #1c2d37;
+  margin: 0;
+  padding: 8px;
+  font-size: 14px;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.member-card {
+  /* Existing styles... */
+  opacity: 0;
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+/* Optional: stagger animations */
+.member-card:nth-child(1) { animation-delay: 0.1s; }
+.member-card:nth-child(2) { animation-delay: 0.2s; }
+.member-card:nth-child(3) { animation-delay: 0.3s; }
+.member-card:nth-child(4) { animation-delay: 0.4s; }
+.member-card:nth-child(5) { animation-delay: 0.5s; }
+/* Add more as needed */
+
+
+/* Grand Title Style */
+.group-title {
+  text-align: center;
+  color: #a8f0e0;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  animation: fadeUp 1s ease-out both;
+}
+
+/* Fade Up Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
